@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salma Souissi - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.7;
+            color: #000000;
+            background-color: #faebd7;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #faebd7;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: #faebd7;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #faebd7;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-text {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        .header .title {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+            font-style: italic;
+            font-family: 'Georgia', serif;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: #faebd7;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #000000;
+            font-size: 1.9em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #333333;
+            position: relative;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #000000;
+        }
+
+        .about-text {
+            font-size: 1.15em;
+            color: #000000;
+            text-align: justify;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid #000000;
+            font-weight: 400;
+            line-height: 1.8;
+            font-family: 'Georgia', serif;
+        }
+
+        .education-item, .experience-item, .project-item {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #000000;
+        }
+
+        .education-item h3, .experience-item h3, .project-item h3 {
+            color: #000000;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+        }
+
+        .education-item .institution, .experience-item .company, .project-item .tech {
+            color: #333333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .education-item .date, .experience-item .date, .project-item .date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #000000;
+        }
+
+        .skill-category h4 {
+            color: #000000;
+            margin-bottom: 18px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Georgia', serif;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 6px 0;
+            color: #000000;
+            position: relative;
+            padding-left: 25px;
+            font-weight: 400;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            color: #000000;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .placeholder {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            border: 2px dashed #dee2e6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=" alt="Salma Souissi" class="profile-image">
+                <div class="header-text">
+                    <h1>Salma Souissi</h1>
+                    <div class="title">Lauréate de Master Biologie et Santé</div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:salmasouissy75@gmail.com">salmasouissy75@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+212 607402920</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://www.linkedin.com/in/salma-souissi-0886a3268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>À Propos</h2>
+                <div class="about-text">
+                    Passionnée et motivée à intégrer le secteur de la santé et de la recherche, je suis une jeune diplômée en Master Biologie et Santé. Mon parcours académique m'a permis de développer une solide expertise dans les domaines de la biologie, de la recherche médicale et des sciences de la santé. Je suis déterminée à contribuer à l'avancement des connaissances scientifiques et à l'amélioration des soins de santé à travers mon engagement professionnel.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Formation</h2>
+                <div class="education-item">
+                    <h3>Master en Biologie et Santé</h3>
+                    <div class="institution">FSBM (Faculté des Sciences Ben M'Sik)</div>
+                    <div class="date">2023 - 2025</div>
+                    <p>Formation spécialisée en biologie et sciences de la santé, avec focus sur la recherche médicale et les applications thérapeutiques.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Licence en Biologie et Physiologie Animale</h3>
+                    <div class="institution">FSBM (Faculté des Sciences Ben M'Sik)</div>
+                    <div class="date">2020 - 2023</div>
+                    <p>Formation approfondie en biologie animale, physiologie et mécanismes biologiques fondamentaux.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Baccalauréat Sciences de la Vie et de la Terre</h3>
+                    <div class="institution">Lycée Ouad Eddahab</div>
+                    <div class="date">2020</div>
+                    <p>Diplôme d'études secondaires avec spécialisation en sciences naturelles.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Expérience Professionnelle</h2>
+                <div class="experience-item">
+                    <h3>Enquêtrice Principale - Recensement Général de la Population et de l'Habitat</h3>
+                    <div class="company">Haut-Commissariat au Plan (HCP)</div>
+                    <div class="date">2024</div>
+                    <p>Participation au recensement général de la population et de l'habitat 2024 en tant qu'enquêtrice principale. Responsabilité de la collecte de données démographiques et socio-économiques, gestion d'équipe d'enquêteurs, et assurance de la qualité des données recueillies sur le terrain.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Stage au sein du Laboratoire d'Immuno-Sérologie</h3>
+                    <div class="company">CHU Ibn Rochd</div>
+                    <div class="date">01/09/2023 - 30/09/2023 (1 mois)</div>
+                    <p>Stage de formation pratique en immuno-sérologie, découverte des techniques immunologiques, tests sérologiques et méthodes de diagnostic immunologique.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Stage au sein du Laboratoire d'Anatomie-Pathologie</h3>
+                    <div class="company">Institut Pasteur</div>
+                    <div class="date">05/07/2023 - 05/08/2023 (1 mois)</div>
+                    <p>Stage d'observation et de formation en anatomie pathologique, apprentissage des techniques histologiques, analyse microscopique et procédures de diagnostic anatomopathologique.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Stage au sein du Laboratoire d'Hématologie</h3>
+                    <div class="company">CHU Ibn Rochd</div>
+                    <div class="date">01/08/2022 - 01/09/2022 (1 mois)</div>
+                    <p>Stage d'observation et de formation pratique au laboratoire d'hématologie, permettant de découvrir les techniques d'analyse sanguine, les procédures de diagnostic et le fonctionnement d'un laboratoire hospitalier.</p>
+                </div>
+                <div class="placeholder">
+                    <p>Ajoutez ici d'autres expériences professionnelles, stages, projets de recherche, etc.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Formation et Activités Para-universitaires</h2>
+                <div class="education-item">
+                    <h3>Formation en Entrepreneuriat Féminin</h3>
+                    <div class="institution">Bibliothèque Universitaire Mohammed Sekkat</div>
+                    <div class="date">[Date à compléter si souhaité]</div>
+                    <p>Participation à une formation spécialisée en entrepreneuriat féminin, développement des compétences en création d'entreprise, leadership féminin et gestion de projet entrepreneurial.</p>
+                </div>
+                <div class="placeholder">
+                    <p>Ajoutez ici d'autres formations complémentaires, ateliers, conférences, ou activités para-universitaires</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Compétences Techniques</h4>
+                        <ul class="skill-list">
+                            <li>Recherche en biologie</li>
+                            <li>Analyse de données scientifiques</li>
+                            <li>Techniques de laboratoire</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Compétences Transversales</h4>
+                        <ul class="skill-list">
+                            <li>Organisée</li>
+                            <li>Esprit d'analyse</li>
+                            <li>Rigueur scientifique</li>
+                            <li>Travail en équipe</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Langues</h4>
+                        <ul class="skill-list">
+                            <li>Arabe (Langue maternelle)</li>
+                            <li>Français (Courant)</li>
+                            <li>Anglais</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Outils & Logiciels</h4>
+                        <ul class="skill-list">
+                            <li>Pack Office</li>
+                            <li>Logiciels statistiques</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Projets & Recherches</h2>
+                <div class="project-item">
+                    <h3>Projet de Fin d'Études du Master</h3>
+                    <div class="tech">Centre d'Étude Nucléaire à la Maamoura</div>
+                    <div class="date">2024-2025</div>
+                    <p><strong>Titre :</strong> "L'évaluation du stress oxydatif chez le protozoaire unicellulaire Tetrahymena pyriformis exposé à l'insecticide Lambda-cyhalothrine"</p>
+                    <p>Ce travail de recherche évalue les effets de la lambda-cyhalothrine sur Tetrahymena pyriformis, un protozoaire modèle en écotoxicologie. L'étude examine l'impact sur la croissance cellulaire, les modifications morphologiques, l'activité enzymatique et les marqueurs du stress oxydatif. Elle met également en évidence des altérations de l'expression protéique, contribuant à une meilleure compréhension des mécanismes de toxicité et à l'identification de biomarqueurs pour la biosurveillance des milieux aquatiques.</p>
+                </div>
+                <div class="placeholder">
+                    <p>Ajoutez ici d'autres projets de recherche, publications, ou projets personnels pertinents</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
